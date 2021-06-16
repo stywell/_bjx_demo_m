@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import "lib/normalize.css";
+@import "_color";
+
+
+body {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+a {
+    text-decoration: none;
+    color: $main-font-color;
+}
+ul, ol, dl, li, dt, dd {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+}
+img {
+    border: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+// 关于z-index的说明
+// <1000        页面排版
+// 1000~1999    页面弹层
+// 2000~2999    警告级别弹层 > 加载弹层
+// 3000~3999    错误级别弹层 > 消息弹窗
+

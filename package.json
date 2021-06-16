@@ -1,0 +1,82 @@
+{
+  "name": "bjx_demo_m",
+  "version": "6.0.0",
+  "config": {
+    "port": 4000
+  },
+  "scripts": {
+    "debug": "nodemon --inspect bin/www",
+    "start": "nodemon bin/www",
+    "open": "start http://192.168.5.80:%npm_package_config_port%",
+    "tpl": "gulp tpl & title %npm_package_name%:%npm_package_config_port%",
+    "dev": "npm-run-all -p start open tpl",
+    "prd": "pm2 start --env production",
+    "delete": "pm2 delete %npm_package_name%",
+    "reload": "pm2 reload %npm_package_name% --update-env",
+    "testing": "pm2 start",
+    "watching": "pm2 start --watch",
+    "staging": "pm2 start --env staging"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "ioredis": "^4.9.3",
+    "kcors": "^2.2.2",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-compress": "^5.0.1",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^4.1.0",
+    "koa-passport": "^4.1.3",
+    "koa-redis-cache": "^3.0.2",
+    "koa-router": "^7.4.0",
+    "koa-session2": "^2.2.10",
+    "koa-static": "^5.0.0",
+    "koa-views": "^7.0.1",
+    "node-fetch": "^2.6.1",
+    "nunjucks": "^3.2.2",
+    "openid-client": "^4.5.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@moohng/postcss-px2vw": "^1.0.2",
+    "autoprefixer": "^10.0.1",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-html-minify": "^0.0.14",
+    "gulp-notify": "^3.2.0",
+    "gulp-nunjucks": "^5.0.0",
+    "gulp-oss-upload": "^1.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webserver": "^0.9.1",
+    "gulp-zip": "^5.0.0",
+    "gulp.spritesmith": "^6.9.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.4.249:8888/caoce/_bjx_demo_m"
+  },
+  "author": "CC",
+  "license": "ISC",
+  "browserslist": [
+    "last 4 versions",
+    "> 0.5%",
+    "ie >= 8",
+    "Chrome >= 39",
+    "Firefox >= 38",
+    "Android >= 4.0",
+    "iOS >= 6"
+  ]
+}

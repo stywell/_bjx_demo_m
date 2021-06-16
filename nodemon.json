@@ -1,0 +1,31 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    ".vscode",
+    "node_modules/**/node_modules",
+    "_dist",
+    "_src",
+    "public",
+    "static"
+  ],
+  "verbose": false,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "events":{
+    "start":"@echo off && echo [%npm_package_name%:%npm_package_config_port%]  %cd%  %time:~0,8%"
+  },
+  "watch": [
+    "inc",
+    "routes",
+    "views",
+    "app.js",
+    "package.json"
+  ],
+  "env": {
+    "NODE_ENV": "development",
+    "DEBUG": ""
+  },
+  "ext": "js,htm,json"
+}
