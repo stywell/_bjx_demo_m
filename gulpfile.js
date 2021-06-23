@@ -343,3 +343,30 @@ exports['pub-tpl'] = series(
     precompile_tpl,
     clean_views_min
 )
+exports['publish'] = series(
+    sprite,
+    scss,
+    parallel(
+        clean_public_css,
+        clean_public_img
+    ),
+    parallel(
+        copy_public_css,
+        copy_public_img
+    ),
+    clean_dist,
+    parallel(
+        copy_dist_img,
+        copy_dist_css,
+        copy_dist_js,
+        compress_css,
+        compress_js,
+        bundle_js,
+        compress_htm
+    ),
+    parallel(
+        precompile_tpl,
+        packaging_all
+    ),
+    clean_views_min
+)
