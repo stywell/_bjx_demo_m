@@ -34,8 +34,12 @@ public               资源文件目录 (网站模板所需资源)
     css                  从_src构建而来
     img                  从_src构建而来
     js                   网站模板所需脚本
-        lib/nunjucks-slim.min.js    浏览器模板渲染类库 (可以不使用浏览器渲染!)
+        lib
+            nunjucks-slim.min.js    浏览器模板渲染类库 (可以不使用浏览器渲染!)
         nunjucks_env.js             浏览器模板渲染环境 (配合tpl中的预编译模板)
+        module
+            child_module.js         浏览器模块支持
+        page_module.esm.js          浏览器模块支持
     tpl                  从views/cnippet构建而来 (预编译模板片段)
 routes               路由文件目录
     api.js               页面内请求路由
@@ -80,6 +84,9 @@ reload.bat           一键重启 (服务端用)
 
     preview.bat                           //快速 预览站点 [npm run dev]
     publish.bat                           //快速 打包站点 [gulp style && gulp pub]
+
+    gulp upload                           //上传阿里云OSS
+    gulp pack                             //打包资源文件为zip
 
     npm outdated                          //检查依赖更新
     netstat -aon|findstr "3099"           //查看端口占用
